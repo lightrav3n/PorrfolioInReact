@@ -52,7 +52,7 @@ a {
   transition: color var(--short-duration) ease-in;
 }
 .gradient-text {
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: rgba(231, 139, 19, 0.952);
   background-image: linear-gradient(
     to bottom,
@@ -83,6 +83,7 @@ section img {
 
 .name {
   color: var(--yellow);
+  font-size: 4em;
 }
 
 section {
