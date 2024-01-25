@@ -8,7 +8,7 @@ import Refuge from "./components/routes/Refuge.jsx";
 import WebDev from "./components/routes/WebDev.jsx";
 import Sets from "./components/routes/Sets.jsx";
 import Contact from "./components/routes/Contact.jsx";
-import Homepage from "./components/homepage.jsx";
+import Homepage from "./components/Homepage.jsx";
 
 import "./App.css";
 
