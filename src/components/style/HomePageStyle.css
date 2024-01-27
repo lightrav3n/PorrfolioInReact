@@ -451,7 +451,10 @@ article > * {
   .body {
     grid-template-rows: 8rem calc(100vh - 8rem);
   }
-
+  .name {
+  
+    font-size: 2em;
+  }
   article {
     flex: 1;
   }
