@@ -33,7 +33,7 @@ const Homepage = () => {
           </ul>
           <ul>
             <li>
-              <Link to="/contact" className="cta">
+              <Link to="/contact" className="link">
                 Contact
               </Link>
             </li>
