@@ -51,10 +51,8 @@ const Persona = () => {
             <b>Concepts</b>
           </h2>
           <p>
-            Just having fun and imagining different scenarios for different type
-            of characters and how they might look based on the world that they
-            might inhabit. <br />
-            <b>early 2019 </b>
+          various projects i designed in the past years for different
+            broadcasting networks and companies. <br /><b>2016 - 2019 </b>
           </p>
         </div>
         <Carousel images={images} />
