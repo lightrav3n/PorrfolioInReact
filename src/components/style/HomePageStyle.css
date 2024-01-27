@@ -451,10 +451,7 @@ article > * {
   .body {
     grid-template-rows: 8rem calc(100vh - 8rem);
   }
-  .name {
-  
-    font-size: 2em;
-  }
+
   article {
     flex: 1;
   }
@@ -722,13 +719,13 @@ html {
     flex: 1;
   }
   .link {
-    font-size: 2rem;
+    font-size: 1rem;
   }
   .cta {
-    font-size: 2rem;
+    font-size: 1rem;
   }
   .name {
-    font-size: 4em;
+    font-size: 1em;
   }
 }
 
