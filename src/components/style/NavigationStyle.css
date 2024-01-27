@@ -197,7 +197,7 @@ li {
   }
   #menu ul li a {
     margin-bottom: 0px;
-    font-size: 3rem;
+    font-size: 1rem;
     font-weight: 600;
   }
   .header {
@@ -216,7 +216,7 @@ li {
     font-size: 2em;
   }
   nav li a {
-    font-size: 6em;
+    font-size: 2em;
   }
   .cta {
     text-align: end;
