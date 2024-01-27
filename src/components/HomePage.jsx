@@ -17,13 +17,13 @@ const Homepage = () => {
         <nav>
           <ul>
             <li>
-              <Link to="/artstation" className="link">
+              <Link to="https://www.artstation.com/davidalex" className="link">
                 Artstation
               </Link>
             </li>
 
             <li>
-              <Link to="/linkedin" className="link">
+              <Link to="https://www.linkedin.com/in/alexdavidr" className="link">
                 Linkedin
               </Link>
             </li>
@@ -34,7 +34,7 @@ const Homepage = () => {
           </ul>
           <ul>
             <li>
-              <Link to="/contact" className="cta">
+              <Link to="/Portfolio/Contact" className="cta">
                 Contact
               </Link>
             </li>
