@@ -30,7 +30,7 @@ const Homepage = () => {
           </ul>
           <ul>
            
-            <li className="name"><a href="https://lightrav3n.github.io/firstPage/">David Alex</a></li>
+            <li id="name"><a href="https://lightrav3n.github.io/firstPage/">David Alex</a></li>
           </ul>
           <ul>
             <li>

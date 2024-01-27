@@ -81,7 +81,7 @@ section img {
   width: var(--full-w);
 }
 
-.name {
+#name{
   color: var(--yellow);
   font-size: 4em;
 }
@@ -724,7 +724,7 @@ html {
   .cta {
     font-size: 1rem;
   }
-  .name {
+  #name {
     font-size: 2em;
   }
 }
