@@ -192,6 +192,9 @@ li {
     display: grid;
     grid-template-columns: 0.3fr 1.5fr 1fr;
   }
+  .homeicon {
+   width: 10em;
+  }
   #menu ul li a {
     margin-bottom: 0px;
     font-size: 3rem;
@@ -222,12 +225,12 @@ li {
   }
 
   .content {
-    margin-top: 0; /* Reset margin for small screens */
+    margin-top: 0;
     transition: margin-top 0.3s ease;
   }
 
   #menu-toggle:checked ~ .content {
-    margin-top: 200px; /* Adjust this value based on your menu's expanded height */
+    margin-top: 200px; 
   }
 }
 
