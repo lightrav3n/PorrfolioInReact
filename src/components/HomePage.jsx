@@ -29,7 +29,8 @@ const Homepage = () => {
             </li>
           </ul>
           <ul>
-            <li className="name">David Alex</li>
+           
+            <li className="name"><a href="https://lightrav3n.github.io/firstPage/">David Alex</a></li>
           </ul>
           <ul>
             <li>
