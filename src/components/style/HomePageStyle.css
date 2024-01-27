@@ -30,6 +30,7 @@ a:hover {
   color: var(--black);
   overflow: hidden;
   padding: var(--default-padding);
+  font-size: 2rem;
 }
 .cta:hover,
 .cta:focus {
@@ -81,7 +82,7 @@ section img {
   width: var(--full-w);
 }
 
-#name{
+#name a{
   color: var(--yellow);
   font-size: 4em;
 }
@@ -266,6 +267,10 @@ article > * {
     position: absolute;
     right: 0;
     top: 0;
+  }
+  #name a{
+    color: var(--yellow);
+    font-size: 4em;
   }
   h1 {
     margin: 0 auto;
@@ -455,7 +460,10 @@ article > * {
   article {
     flex: 1;
   }
-
+  #name a{
+    color: var(--yellow);
+    font-size: 2em;
+  }
   h1 {
     margin: 0 auto;
   }
@@ -724,7 +732,7 @@ html {
   .cta {
     font-size: 1rem;
   }
-  #name {
+  #name a {
     font-size: 2em;
   }
 }
