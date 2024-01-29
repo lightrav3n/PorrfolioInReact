@@ -16,7 +16,7 @@ Welcome to the My React Portfolio repository! This project serves as a personal 
 
 # Demo
 
-Visit the [Live Demo]([https://davidalex-portfolio.netlify.app/]) to experience the portfolio.
+Visit the [Live Demo] (https://davidalex-portfolio.netlify.app/) to experience the portfolio.
 
 # Features
 
