@@ -10,8 +10,6 @@ Welcome to the My React Portfolio repository! This project serves as a personal 
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
 - [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 
 # Demo
@@ -67,14 +65,6 @@ Visit [http://localhost:3000](http://localhost:3000) to see your portfolio.
 - **src**: Contains the React source code.
 - **public**: Includes the HTML file and other static assets.
 - **components**: Holds React components used in the project.
-
-# Contributing
-
-Feel free to contribute to this project. Check the [Contributing Guidelines](CONTRIBUTING.md) for more details.
-
-# License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 # Contact
 
