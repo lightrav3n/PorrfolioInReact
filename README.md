@@ -20,10 +20,9 @@ Visit the [Live Demo] (https://davidalex-portfolio.netlify.app/) to experience t
 
 # Features
 
-- **Responsive Design**: The portfolio prioritizes accessibility and visual appeal on various devices and screen sizes.
-- **Project Showcase**: Showcase projects with detailed descriptions, images, and links to repositories or live demos.
-- **Skills Section**: Clearly outline skills and proficiency levels.
-- **Contact Form**: Facilitate communication by including a contact form or providing contact information for potential employers or collaborators.
+- The portfolio prioritizes accessibility and visual appeal on various devices and screen sizes.
+- Showcase projects with detailed descriptions, images, and links to repositories or live demos.
+- Facilitate communication by including a contact form or providing contact information for potential employers or collaborators.
 
 # Installation
 
