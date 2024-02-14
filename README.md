@@ -10,8 +10,6 @@ Welcome to the My React Portfolio repository! This project serves as a personal 
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
 - [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 
 # Demo
@@ -20,10 +18,9 @@ Visit the [Live Demo] (https://davidalex-portfolio.netlify.app/) to experience t
 
 # Features
 
-- **Responsive Design**: The portfolio prioritizes accessibility and visual appeal on various devices and screen sizes.
-- **Project Showcase**: Showcase projects with detailed descriptions, images, and links to repositories or live demos.
-- **Skills Section**: Clearly outline skills and proficiency levels.
-- **Contact Form**: Facilitate communication by including a contact form or providing contact information for potential employers or collaborators.
+- The portfolio prioritizes accessibility and visual appeal on various devices and screen sizes.
+- Showcase projects with detailed descriptions, images, and links to repositories or live demos.
+- Facilitate communication by including a contact form or providing contact information for potential employers or collaborators.
 
 # Installation
 
@@ -68,14 +65,6 @@ Visit [http://localhost:3000](http://localhost:3000) to see your portfolio.
 - **src**: Contains the React source code.
 - **public**: Includes the HTML file and other static assets.
 - **components**: Holds React components used in the project.
-
-# Contributing
-
-Feel free to contribute to this project. Check the [Contributing Guidelines](CONTRIBUTING.md) for more details.
-
-# License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 # Contact
 
