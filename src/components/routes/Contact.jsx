@@ -1,15 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   CDBInput,
   CDBCard,
   CDBCardBody,
   CDBBtn,
-  CDBSelect,
   CDBContainer,
 } from "cdbreact";
 import "../style/ContactStyle.css";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("https://contactbackend-xpxs.onrender.com/portfolio/contact", {    
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert("Email sent successfully");
+        // Optionally, reset the form fields after successful submission
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        alert("Failed to send email");
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+      alert("Failed to send email");
+    }
+  };
+
   return (
     <CDBContainer
       className="d-flex justify-content-center align-items-center mt-4"
@@ -27,33 +67,61 @@ const Contact = () => {
           <div className="text-center mt-4 mb-2">
             <p className="h4"> Contact us </p>
           </div>
-          <CDBInput label="Name" type="text" />
-          <CDBInput label="E-mail" type="email" />
-          <p className="text-center m-4">Subject</p>
-
-          <CDBInput label="Message" type="textarea" />
-          <div className="d-flex justify-content-center align-items-center mt-4">
+          <form onSubmit={handleSubmit}>
             <CDBInput
-              style={{
-                marginRight: "10px",
-              }}
-              material
-              type="Checkbox"
+              label="Name"
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
             />
-            <p className="m-0">Send me a copy of this message</p>
-          </div>
-          <CDBBtn
-            style={{
-              fontSize: "2em",
-            }}
-            color="dark"
-            className="btn-block my-3 mx-0"
-          >
-            Send
-          </CDBBtn>
+            <CDBInput
+              label="E-mail"
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+            />
+            <CDBInput
+              label="Subject"
+              type="text"
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
+            />
+            
+            <CDBInput
+              label="Message"
+              type="textarea"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+            />
+            {/* <div className="d-flex justify-content-center align-items-center mt-4">
+              <CDBInput
+                style={{
+                  marginRight: "10px",
+                }}
+                material
+                type="Checkbox"
+              />
+              <p className="m-0">Send me a copy of this message</p>
+            </div> */}
+            <CDBBtn
+              type="submit"
+              style={{
+                fontSize: "2em",
+              }}
+              color="dark"
+              className="btn-block my-3 mx-0"
+            >
+              Send
+            </CDBBtn>
+          </form>
         </CDBCardBody>
       </CDBCard>
     </CDBContainer>
   );
 };
+
 export default Contact;
