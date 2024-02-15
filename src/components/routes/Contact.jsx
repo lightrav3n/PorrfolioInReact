@@ -70,7 +70,7 @@ const Contact = () => {
       >
         <CDBCardBody className="mx-4">
           <div className="text-center mt-4 mb-2">
-            <p className="h4"> Contact us </p>
+            <p className="h4"> Send me a Message </p>
           </div>
           <form onSubmit={handleSubmit}>
             <CDBInput
@@ -79,6 +79,7 @@ const Contact = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
+              placeholder="Your Name Here"
             />
             <CDBInput
               label="E-mail"
@@ -86,6 +87,7 @@ const Contact = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
+              placeholder="Your Email Here"
             />
             <CDBInput
               label="Subject"
@@ -93,6 +95,7 @@ const Contact = () => {
               name="subject"
               value={formData.subject}
               onChange={handleChange}
+              placeholder="What's this about?"
             />
             
             <CDBInput
@@ -101,6 +104,7 @@ const Contact = () => {
               name="message"
               value={formData.message}
               onChange={handleChange}
+              placeholder="Please tell me more..."
             />
             {/* <div className="d-flex justify-content-center align-items-center mt-4">
               <CDBInput

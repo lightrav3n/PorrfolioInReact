@@ -1,10 +1,46 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 import "../style/NavigationStyle.css";
 import HomeIcon from "../../assets/icons/home.png";
 
 const Navigation = () => {
+
+  const [menuChecked, setMenuChecked] = useState(false);
+
+  // Function to toggle menu state
+  const toggleMenu = () => {
+    setMenuChecked(!menuChecked);
+  };
+
+  // Function to close menu when a link is clicked
+  const closeMenu = () => {
+    if (menuChecked) {
+      setMenuChecked(false);
+    }
+  };
+
+  // useEffect to add event listener on component mount
+  useEffect(() => {
+    // Add event listener to close menu when a NavLink is clicked
+    const handleLinkClick = () => {
+      closeMenu();
+    };
+
+    // Attach the event listener
+    document.querySelectorAll(".menu a").forEach((link) => {
+      link.addEventListener("click", handleLinkClick);
+    });
+
+    // Remove event listener on component unmount
+    return () => {
+      document.querySelectorAll(".menu a").forEach((link) => {
+        link.removeEventListener("click", handleLinkClick);
+      });
+    };
+  }, [menuChecked]); // Re-run effect when menuChecked state changes
+
+
   return (
     <header>
       <div className="homeicon">
@@ -13,7 +49,8 @@ const Navigation = () => {
         </NavLink>
       </div>
       <div className="header">
-        <input type="checkbox" id="menu-toggle" />
+        <input type="checkbox" id="menu-toggle" checked={menuChecked}
+          onChange={toggleMenu} />
         <label htmlFor="menu-toggle" id="menu-toggle-label">
           <span></span>
           <span></span>
