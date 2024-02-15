@@ -22,25 +22,29 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
-      const response = await fetch("https://contactbackend-xpxs.onrender.com/portfolio/contact", {    
+      const response = await fetch("https://contactbackend-0to9.onrender.com/portfolio/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
-
+  
       if (response.ok) {
-        alert("Email sent successfully");
-        // Optionally, reset the form fields after successful submission
-        setFormData({
-          name: "",
-          email: "",
-          subject: "",
-          message: "",
-        });
+        // Display alert message
+        window.alert("Email sent successfully");
+  
+        // Reset form fields after a short delay
+        setTimeout(() => {
+          setFormData({
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+          });
+        }, 1000);
       } else {
         alert("Failed to send email");
       }
@@ -49,6 +53,7 @@ const Contact = () => {
       alert("Failed to send email");
     }
   };
+  
 
   return (
     <CDBContainer
