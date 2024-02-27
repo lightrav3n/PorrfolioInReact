@@ -1,12 +1,12 @@
 import { React, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 
 import "../style/NavigationStyle.css";
 import HomeIcon from "../../assets/icons/home.png";
 
 const Navigation = () => {
-
-  const [menuChecked, setMenuChecked] = useState(false);
+  const [menuChecked, setMenuChecked] = useState(true);
 
   // Function to toggle menu state
   const toggleMenu = () => {
@@ -15,10 +15,30 @@ const Navigation = () => {
 
   // Function to close menu when a link is clicked
   const closeMenu = () => {
-    if (menuChecked) {
+    if (window.innerWidth > 768) {
+      setMenuChecked(true);
+    } else {
       setMenuChecked(false);
     }
   };
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setMenuChecked(true);
+      } else {
+        setMenuChecked(false);
+      }
+    };
+
+    // Call handleResize initially to set menuChecked based on initial screen size
+    handleResize();
+
+    // Add event listener to handle window resize
+    window.addEventListener('resize', handleResize);
+
+    // Remove event listener on component unmount to avoid memory leaks
+    return () => window.removeEventListener('resize', handleResize);
+  }, []); // Empty dependency array to ensure this effect only runs once on component mount
 
   // useEffect to add event listener on component mount
   useEffect(() => {
@@ -40,28 +60,42 @@ const Navigation = () => {
     };
   }, [menuChecked]); // Re-run effect when menuChecked state changes
 
-
   return (
+    
     <header>
       <div className="homeicon">
         <NavLink to="/">
           <img src={HomeIcon} width="40" alt="home" />
         </NavLink>
       </div>
-      <div className="header">
-        <input type="checkbox" id="menu-toggle" checked={menuChecked}
-          onChange={toggleMenu} />
+      <div className="header ">
+        <input
+          type="checkbox"
+          id="menu-toggle"
+          checked={menuChecked}
+          onChange={toggleMenu}
+        />
         <label htmlFor="menu-toggle" id="menu-toggle-label">
           <span></span>
           <span></span>
           <span></span>
         </label>
-        <nav id="menu" className="menu">
+        <motion.nav
+          id="menu"
+          className="menu"
+          initial={false}
+          animate={menuChecked ? "open" : "closed"}
+          variants={{
+            open: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+            closed: { opacity: 0, y: "-100%", transition: { duration: 0.3 } }
+          }}
+        >
           <ul>
             <li>
               <NavLink
                 to="/Portfolio/Sets"
                 className={({ isActive }) => (isActive ? "active-link" : "")}
+                onClick={closeMenu}
               >
                 Sets
               </NavLink>
@@ -70,6 +104,7 @@ const Navigation = () => {
               <NavLink
                 to="/Portfolio/Designs"
                 className={({ isActive }) => (isActive ? "active-link" : "")}
+                onClick={closeMenu}
               >
                 Designs
               </NavLink>
@@ -78,6 +113,7 @@ const Navigation = () => {
               <NavLink
                 to="/Portfolio/Paintings"
                 className={({ isActive }) => (isActive ? "active-link" : "")}
+                onClick={closeMenu}
               >
                 Paintings
               </NavLink>
@@ -86,6 +122,7 @@ const Navigation = () => {
               <NavLink
                 to="/Portfolio/Concepts"
                 className={({ isActive }) => (isActive ? "active-link" : "")}
+                onClick={closeMenu}
               >
                 Concepts
               </NavLink>
@@ -94,6 +131,7 @@ const Navigation = () => {
               <NavLink
                 to="/Portfolio/Persona"
                 className={({ isActive }) => (isActive ? "active-link" : "")}
+                onClick={closeMenu}
               >
                 Persona
               </NavLink>
@@ -102,6 +140,7 @@ const Navigation = () => {
               <NavLink
                 to="/Portfolio/Refuge"
                 className={({ isActive }) => (isActive ? "active-link" : "")}
+                onClick={closeMenu}
               >
                 Refuge
               </NavLink>
@@ -110,27 +149,36 @@ const Navigation = () => {
               <NavLink
                 to="/Portfolio/WebDev"
                 className={({ isActive }) => (isActive ? "active-link" : "")}
+                onClick={closeMenu}
               >
                 WebDev
               </NavLink>
             </li>
           </ul>
-        </nav>
+        </motion.nav>
       </div>
       <div className="header-elements">
         <ul>
           <li>
-            <a href="https://www.artstation.com/davidalex" className="link">
+            <a
+              href="https://www.artstation.com/davidalex"
+              className="link"
+              onClick={closeMenu}
+            >
               Artstation
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/alexdavidr" className="link">
+            <a
+              href="https://www.linkedin.com/in/alexdavidr"
+              className="link"
+              onClick={closeMenu}
+            >
               LinkedIn
             </a>
           </li>
           <li>
-            <NavLink to="/Portfolio/Contact" className="link">
+            <NavLink to="/Portfolio/Contact" className="link" onClick={closeMenu}>
               Contact
             </NavLink>
           </li>

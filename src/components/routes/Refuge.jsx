@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import "../style/MainStyle.css";
 
@@ -32,35 +33,41 @@ const Refuge = () => {
       showCaption: false,
     },
     {
-        src: four,
-        title: "",
-        caption:"",
-        showCaption: false,
-      },
-      {
-        src: five,
-        title: "",
-        caption:"",
-        showCaption: false,
-      },
-      {
-        src: six,
-        title: "",
-        caption:"",
-        showCaption: false,
-      },
+      src: four,
+      title: "",
+      caption:"",
+      showCaption: false,
+    },
+    {
+      src: five,
+      title: "",
+      caption:"",
+      showCaption: false,
+    },
+    {
+      src: six,
+      title: "",
+      caption:"",
+      showCaption: false,
+    },
   ];
 
   return (
     <main>
       <section className="container">
-        <div className="text">
-          <h2>
-            <b>mountain shelter</b>
-          </h2>
-          <p>
-          Part of the portfolio for the master's thesis <br/><br/> <q><i>The mountain shelter area (refuge) offers an adaptable, modular structure that fits in with the mountain terrain, where tourists can relax, take shelter, or charge their smart devices. It's powered by solar energy, cost-effective, environmentally friendly, and self-sustainable.</i></q> <br/> <b>2017</b></p>
-        </div>
+        <motion.div 
+          initial={{ x: -1000 }} // Initial position outside the viewport (left side)
+          animate={{ x: 0 }} // Animate to position 0 (left edge of the viewport)
+          transition={{ type: "spring", stiffness: 150, damping: 20 }} // Spring animation
+        >
+          <div className="text">
+            <h2>
+              <b>mountain shelter</b>
+            </h2>
+            <p>
+              Part of the portfolio for the master's thesis <br/><br/> <q><i>The mountain shelter area (refuge) offers an adaptable, modular structure that fits in with the mountain terrain, where tourists can relax, take shelter, or charge their smart devices. It's powered by solar energy, cost-effective, environmentally friendly, and self-sustainable.</i></q> <br/> <b>2017</b></p>
+          </div>
+        </motion.div>
         <Carousel images={images} />
       </section>
     </main>

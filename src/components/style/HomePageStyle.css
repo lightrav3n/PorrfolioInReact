@@ -25,18 +25,10 @@ a:hover {
   color: var(--yellow);
 }
 
-.cta {
-  align-self: end;
-  color: var(--black);
-  overflow: hidden;
-  padding: var(--default-padding);
-  font-size: 2rem;
-}
-.cta:hover,
-.cta:focus {
-  border-color: var(--yellow);
-  color: var(--yellow);
-}
+.cont {
+    padding: var(--default-padding);
+  }
+
 
 .body {
   display: grid;
@@ -447,10 +439,7 @@ article > * {
   .link a {
     font-size: 2em;
   }
-  .cta {
-    font-size: 2em;
   }
-}
 
 @media only screen and (min-width: 480px) {
   .body {
@@ -729,9 +718,7 @@ html {
   .link {
     font-size: 1rem;
   }
-  .cta {
-    font-size: 1rem;
-  }
+ 
   #name a {
     font-size: 3em;
   }

@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import "../style/MainStyle.css";
 
@@ -33,17 +34,23 @@ const Concepts = () => {
   return (
     <main>
       <section className="container">
-        <div className="text">
-          <h2>
-            <b>Concepts</b>
-          </h2>
-          <p>
-            Just having fun and imagining different scenarios for different type
-            of characters and how they might look based on the world that they
-            might inhabit. <br />
-            <b>early 2019 </b>
-          </p>
-        </div>
+        <motion.div 
+          initial={{ x: -1000 }} // Initial position outside the viewport (left side)
+          animate={{ x: 0 }} // Animate to position 0 (left edge of the viewport)
+          transition={{ type: "spring", stiffness: 150, damping: 20 }} // Spring animation
+        >
+          <div className="text">
+            <h2>
+              <b>Concepts</b>
+            </h2>
+            <p>
+              Just having fun and imagining different scenarios for different type
+              of characters and how they might look based on the world that they
+              might inhabit. <br />
+              <b>early 2019 </b>
+            </p>
+          </div>
+        </motion.div>
         <Carousel images={images} />
       </section>
     </main>

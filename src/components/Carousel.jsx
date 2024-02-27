@@ -1,7 +1,6 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 import "./style/MainStyle.css";
-// import "./style/CarouselStyle.css";
 
 const Carousel = ({ images }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -23,22 +22,30 @@ const Carousel = ({ images }) => {
       <div className="carousel">
         <div className="carousel-indicators">
           {images.map((_, index) => (
-            <div
+
+            <motion.div
               key={index}
               style={{ height: "2px" }}
               onClick={() => setActiveIndex(index)}
+              initial={{ opacity: 1, y: -1000 }} // Initial position
+              animate={{ opacity: 1, y: 0 }} // Final position
+              exit={{ opacity: 1, y: 1000 }} // Exit position
+              transition={{ type: "spring", stiffness: 100, damping: 30 }} // 
             >
               <img src={images[index].src} alt={`Slide ${index + 1}`} />
-            </div>
+            </motion.div>
           ))}
         </div>
         <div className="carousel-inner">
           {images.map((image, index) => (
-            <div
+            <motion.div
               key={index}
-              className={`carousel-item ${
-                index === activeIndex ? "active" : ""
-              }`}
+              className={`carousel-item ${index === activeIndex ? "active" : ""
+                }`}
+              initial={{ opacity: 1, y: 1000 }} // Initial position
+              animate={{ opacity: 1, y: 0 }} // Final position
+              exit={{ opacity: 1, y: -1000 }} // Exit position
+              transition={{ type: "spring", stiffness: 500, damping: 50 }} // Spring animation
             >
               <img src={image.src} alt={`Slide ${index + 1}`} />
               {image.showCaption && (
@@ -47,7 +54,7 @@ const Carousel = ({ images }) => {
                   <p>{image.caption}</p>
                 </div>
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
         <button
@@ -61,11 +68,15 @@ const Carousel = ({ images }) => {
           ></span>
           <span className="visually-hidden">Previous</span>
         </button>
+
+
         <button
           className="carousel-control-next"
           type="button"
           onClick={handleNext}
         >
+
+
           <span
             className="carousel-control-next-icon"
             aria-hidden="true"

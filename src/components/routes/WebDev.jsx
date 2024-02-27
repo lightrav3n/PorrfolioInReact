@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import "../style/MainStyle.css";
 
@@ -54,15 +55,21 @@ const WebDev = () => {
   return (
     <main>
       <section className="container">
-        <div className="text">
-          <h2>
-            <b>Peters Bodenprobetechnik GmbH</b>
-          </h2>
-          <p>
-          I took the initiative to redesign and update a company's webpage as part of a case study during an integration course at DCI. I successfully convinced the company to adopt my design, and we collaborated to implement the new webpage by the end of May 2023. The company specializes in soil sampling tools and machine-based solutions, offering a wide range of products for various applications. I focused on creating an intuitive user experience, showcasing their products, providing technical specifications, and highlighting their company history. The new webpage now accurately represents their expertise and offerings in soil sampling technologies<br /> <br /> Live site<a href="https://techbyp.com/"> here</a> <br />GitHub repo<a href="https://github.com/lightrav3n/Peters"> here</a> <br />
-            <b>April-May 2023 </b>
-          </p>
-        </div>
+        <motion.div 
+          initial={{ x: -1000 }} // Initial position outside the viewport (left side)
+          animate={{ x: 0 }} // Animate to position 0 (left edge of the viewport)
+          transition={{ type: "spring", stiffness: 150, damping: 20 }} // Spring animation
+        >
+          <div className="text">
+            <h2>
+              <b>Peters Bodenprobetechnik GmbH</b>
+            </h2>
+            <p>
+            I took the initiative to redesign and update a company's webpage as part of a case study during an integration course at DCI. I successfully convinced the company to adopt my design, and we collaborated to implement the new webpage by the end of May 2023. The company specializes in soil sampling tools and machine-based solutions, offering a wide range of products for various applications. I focused on creating an intuitive user experience, showcasing their products, providing technical specifications, and highlighting their company history. The new webpage now accurately represents their expertise and offerings in soil sampling technologies<br /> <br /> Live site<a href="https://techbyp.com/"> here</a> <br />GitHub repo<a href="https://github.com/lightrav3n/Peters"> here</a> <br />
+              <b>April-May 2023 </b>
+            </p>
+          </div>
+        </motion.div>
     
         <Carousel images={images} />
    

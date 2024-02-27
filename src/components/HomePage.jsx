@@ -34,7 +34,7 @@ const Homepage = () => {
           </ul>
           <ul>
             <li>
-              <Link to="/Portfolio/Contact" className="cta">
+              <Link to="/Portfolio/Contact" className="link cont">
                 Contact
               </Link>
             </li>

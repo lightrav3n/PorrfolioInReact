@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import "../style/MainStyle.css";
 
@@ -33,17 +34,23 @@ const Paintings = () => {
   return (
     <main>
       <section className="container">
-        <div className="text">
-          <h2>
-            <b>Digital Paintings</b>
-          </h2>
-          <p>
-            Some portraits i did while practicing painting in adobe photoshop,
-            back in
-            <br />
-            <b>2018 </b>
-          </p>
-        </div>
+        <motion.div 
+          initial={{ x: -1000 }} // Initial position outside the viewport (left side)
+          animate={{ x: 0 }} // Animate to position 0 (left edge of the viewport)
+          transition={{ type: "spring", stiffness: 150, damping: 20 }} // Spring animation
+        >
+          <div className="text">
+            <h2>
+              <b>Digital Paintings</b>
+            </h2>
+            <p>
+              Some portraits i did while practicing painting in adobe photoshop,
+              back in
+              <br />
+              <b>2018 </b>
+            </p>
+          </div>
+        </motion.div>
         <Carousel images={images} />
       </section>
     </main>
