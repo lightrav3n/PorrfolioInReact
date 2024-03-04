@@ -75,6 +75,7 @@ main {
   font-weight: 600;
   margin-left: auto;
   margin-right: auto;
+  display: none;
 }
 
 li {
@@ -202,7 +203,9 @@ li {
     background-color: transparent;
     border: none;
   }
-
+  #menu-toggle:checked ~ #menu {
+    display: block; /* Show the menu when the checkbox is checked */
+  }
   #menu-toggle-label span {
     display: block;
     width: 25px;

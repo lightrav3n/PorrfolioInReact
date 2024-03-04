@@ -1,0 +1,16 @@
+.menu-container {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.menu-open {
+  transform: translateY(400px);
+  /* Adjust translateY value as needed */
+}
+
+@media (min-width: 768px) {
+  .menu-open {
+    transform: none;
+    /* Reset the transform for screens larger than 768px */
+  }
+}

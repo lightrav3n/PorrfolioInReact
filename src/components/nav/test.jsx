@@ -1,38 +1,66 @@
-import React, { useState, useEffect } from "react";
+
+
+import { React, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
+
 import "../style/NavigationStyle.css";
 import HomeIcon from "../../assets/icons/home.png";
 
-const Navigation = ({ menu, setMenu }) => {
-  const [menuChecked, setMenuChecked] = useState(false);
+const Navigation = () => {
+  const [menuChecked, setMenuChecked] = useState();
 
+  // Function to toggle menu state
   const toggleMenu = () => {
     setMenuChecked(!menuChecked);
-    setMenu(!menu); 
   };
 
+  // Function to close menu when a link is clicked
   const closeMenu = () => {
     if (window.innerWidth > 768) {
       setMenuChecked(true);
-      setMenu(true)
     } else {
       setMenuChecked(false);
-      setMenu(false)
     }
   };
-
   useEffect(() => {
     const handleResize = () => {
-      setMenuChecked(window.innerWidth > 768);
+      if (window.innerWidth > 768) {
+        setMenuChecked(true);
+      } else {
+        setMenuChecked(false);
+      }
     };
 
+    // Call handleResize initially to set menuChecked based on initial screen size
     handleResize();
+
+    // Add event listener to handle window resize
     window.addEventListener('resize', handleResize);
 
+    // Remove event listener on component unmount to avoid memory leaks
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  }, []); // Empty dependency array to ensure this effect only runs once on component mount
 
+  // useEffect to add event listener on component mount
+  useEffect(() => {
+    // Add event listener to close menu when a NavLink is clicked
+    const handleLinkClick = () => {
+      closeMenu();
+    };
+
+    // Attach the event listener
+    document.querySelectorAll(".menu a").forEach((link) => {
+      link.addEventListener("click", handleLinkClick);
+    });
+
+    // Remove event listener on component unmount
+    return () => {
+      document.querySelectorAll(".menu a").forEach((link) => {
+        link.removeEventListener("click", handleLinkClick);
+      });
+    };
+  }, [menuChecked]); // Re-run effect when menuChecked state changes
 
   return (
     
