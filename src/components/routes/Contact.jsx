@@ -84,7 +84,7 @@ const Contact = () => {
                 <p className="h4"> Send me a Message </p>
               </div>
               <form onSubmit={handleSubmit}>
-                <label htmlFor="name">Name:</label>
+                <label htmlFor="name"></label>
                 <CDBInput
                   label="Name"
                   type="text"
@@ -95,7 +95,7 @@ const Contact = () => {
                   placeholder="Your Name Here"
                   autoComplete="name"
                 />
-                <label htmlFor="email">E-mail:</label>
+                <label htmlFor="email"></label>
                 <CDBInput
                   label="E-mail"
                   type="email"
@@ -106,7 +106,7 @@ const Contact = () => {
                   placeholder="Your Email Here"
                   autoComplete="email"
                 />
-                <label htmlFor="subject">Subject:</label>
+                <label htmlFor="subject"></label>
                 <CDBInput
                   label="Subject"
                   type="text"
@@ -117,7 +117,7 @@ const Contact = () => {
                   placeholder="What's this about?"
                   autoComplete="off"
                 />
-                <label htmlFor="message">Message:</label>
+                <label htmlFor="message"></label>
                 <CDBInput
                   label="Message"
                   type="textarea"
