@@ -93,7 +93,7 @@ const Navigation = () => {
           <ul>
             <li>
               <NavLink
-                to="/Portfolio/Sets"
+                to="/Portfolio/Sets?"
                 className={({ isActive }) => (isActive ? "active-link" : "")}
                 onClick={closeMenu}
               >
