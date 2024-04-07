@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "./style/MainStyle.css";
-
+import Sidebar from "./sidebar/Sidebar";
 const Carousel = ({ images }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -19,6 +19,7 @@ const Carousel = ({ images }) => {
 
   return (
     <>
+     
       <div className="carousel">
         <div className="carousel-indicators">
           {images.map((_, index) => (

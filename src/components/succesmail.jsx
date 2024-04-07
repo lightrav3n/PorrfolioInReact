@@ -1,5 +1,5 @@
 import React from "react";
-import "./style/modal.css";
+import "./style/succesmail.css";
 
 const SuccessModal = ({ onClose }) => {
   return (

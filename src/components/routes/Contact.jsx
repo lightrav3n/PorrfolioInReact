@@ -7,7 +7,7 @@ import {
   CDBContainer,
 } from "cdbreact";
 
-import SuccessModal from "../SuccesModal";
+import SuccessModal from "../succesmail";
 import "../style/ContactStyle.css";
 
 const Contact = () => {

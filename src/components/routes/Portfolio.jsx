@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Navigation from "../nav/Navigation";
 import Footer from "../nav/Footer";
 import { Outlet } from "react-router-dom";
+import Sidebar from "../sidebar/Sidebar";
 
 import "../style/Portfolio.css"
 
@@ -10,7 +11,10 @@ const Portfolio = () => {
 
   return (
     <>
+    
+    
       <Navigation menu={menu} setMenu={setMenu} />
+      
       <div
         className={`menu-container ${menu ? 'menu-open' : ''}`}
       >

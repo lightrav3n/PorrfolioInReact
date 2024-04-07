@@ -39,7 +39,9 @@ const Design = () => {
 
   return (
     <main>
+       
       <section className="container">
+     
         <motion.div 
           initial={{ x: -1000 }} // Initial position outside the viewport (left side)
           animate={{ x: 0 }} // Animate to position 0 (left edge of the viewport)

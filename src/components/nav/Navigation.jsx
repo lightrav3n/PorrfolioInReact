@@ -3,13 +3,14 @@ import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import "../style/NavigationStyle.css";
 import HomeIcon from "../../assets/icons/home.png";
+import Sidebar from "../sidebar/Sidebar";
 
 const Navigation = ({ menu, setMenu }) => {
   const [menuChecked, setMenuChecked] = useState(false);
 
   const toggleMenu = () => {
     setMenuChecked(!menuChecked);
-    setMenu(!menu); 
+    setMenu(!menu);
   };
 
   const closeMenu = () => {
@@ -35,13 +36,19 @@ const Navigation = ({ menu, setMenu }) => {
 
 
   return (
-    
+
     <header>
-      <div className="homeicon">
-        <NavLink to="/">
-          <img src={HomeIcon} width="40" alt="home" />
-        </NavLink>
-      </div>
+     <Sidebar  />
+      {/* <div class="homeicon">
+    
+        <a class href="/">
+          <img src={HomeIcon} width="40 " alt="home icon" />
+        </a>
+        
+      </div> */}
+
+      {/* <Sidebar  /> */}
+
       <div className="header ">
         <input
           type="checkbox"
